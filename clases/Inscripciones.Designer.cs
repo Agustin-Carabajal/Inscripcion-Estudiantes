@@ -41,7 +41,6 @@
             this.btMostrarLista = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNomEst = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblDniEst
@@ -130,7 +129,7 @@
             // lblInscriptos
             // 
             this.lblInscriptos.AutoSize = true;
-            this.lblInscriptos.Location = new System.Drawing.Point(520, 307);
+            this.lblInscriptos.Location = new System.Drawing.Point(476, 281);
             this.lblInscriptos.Name = "lblInscriptos";
             this.lblInscriptos.Size = new System.Drawing.Size(99, 13);
             this.lblInscriptos.TabIndex = 9;
@@ -163,21 +162,11 @@
             this.txtNomEst.Size = new System.Drawing.Size(128, 20);
             this.txtNomEst.TabIndex = 12;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(613, 153);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "label2";
-            // 
             // Inscripciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.txtNomEst);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btMostrarLista);
@@ -213,7 +202,6 @@
         private System.Windows.Forms.Button btMostrarLista;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtNomEst;
-        private System.Windows.Forms.Label label2;
     }
 }
 

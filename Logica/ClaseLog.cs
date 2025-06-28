@@ -9,12 +9,9 @@ using Entities;
 
 namespace Logica
 {
-    public class Class1
+    public class ClaseLog
     {
-        public static string MostrarEstudiantes()
-        {
-            return DBConect.MostrarEst();
-        }
+        
 
         public int Cbmateriaselegir(string seleccion)
         {
@@ -40,7 +37,9 @@ namespace Logica
                     break;
 
                 case "Lengua(09:30:00)":
-                    //label2.Text = "mates";
+                    mat.nomMat = "Lengua";
+                    mat.codMat = 3;
+                    mat.horario = new TimeSpan(09, 30, 0);
                     break;
 
                 case "Matemática(16:00:00)":
@@ -94,7 +93,10 @@ namespace Logica
                 
         }
 
-            
-        
+        public List<Estudiante> ObtenerEstudiantesInscriptos(int codMat)
+        {
+            return inscribeDatos.ObtenerEstudiantesPorMateria(codMat);
+        }
+
     }
 }

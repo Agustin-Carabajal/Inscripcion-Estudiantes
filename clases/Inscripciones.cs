@@ -26,9 +26,28 @@ namespace clases
 
         private void btMostrarLista_Click(object sender, EventArgs e)
         {
-            lblInscriptos.Text = Class1.MostrarEstudiantes();
+            if (cbSeleccionMat.SelectedItem != null)
+            {
+                string tipoSeleccionado = cbSeleccionMat.SelectedItem.ToString();
+                var logica = new ClaseLog();
+                int materia_elegida = logica.Cbmateriaselegir(tipoSeleccionado);
+                var estudiantes = logica.ObtenerEstudiantesInscriptos(materia_elegida);
 
-
+                if (estudiantes.Count == 0)
+                {
+                    lblInscriptos.Text = "No hay estudiantes inscriptos a esta materia.";
+                }
+                else
+                {
+                    // Formatear la lista como texto
+                    string texto = "Estudiantes inscriptos:\n";
+                    foreach (var est in estudiantes)
+                    {
+                        texto += $"- {est.dniEst} - {est.nomEst}\n";
+                    }
+                    lblInscriptos.Text = texto;
+                }
+            }
 
         }
 
@@ -40,17 +59,17 @@ namespace clases
 
                 string tipoSeleccionado = cbMaterias.SelectedItem.ToString();
 
-                Class1 logicaCb = new Class1();
+                ClaseLog logicaCb = new ClaseLog();
 
                 int materia_elegida = logicaCb.Cbmateriaselegir(tipoSeleccionado);
 
-                Estudiante est = new Estudiante
+                Estudiante est = new Estudiante()
                 {
-                    dniEst = dni,
-                    nomEst = txtNomEst.Text.Trim()
+                    nomEst = txtNomEst.Text.Trim(),
+                    dniEst = dni
                 };
 
-                var logicaMat = new Class1();
+                var logicaMat = new ClaseLog();
                 string resultado = logicaMat.InscribirSiCorresponde(est, materia_elegida);
 
                 MessageBox.Show(resultado);
